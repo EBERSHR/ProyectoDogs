@@ -1,0 +1,6 @@
+.detailsImage {
+    height: 300px;
+
+    object-fit: contain;
+    overflow: hidden;
+}

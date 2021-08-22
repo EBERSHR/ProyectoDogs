@@ -1,0 +1,24 @@
+.cardComponent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 120px;
+    width: 150px;
+    margin: 10px
+}
+
+.cardImage {
+    height: 180px;
+    width: 180px;
+    /* border: solid; */
+    /* border-color: black; */
+    border-radius: 50%;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
