@@ -32,6 +32,12 @@ const Home = () => {
         dispatch(getPaginationServer(page, limit));
     }
 
+    const handleLimit = (e) => {
+        let lmt = e.target.value;
+        if (lmt < 1) { lmt = 1 }
+        setLimit(lmt)
+    }
+
     const handleForewards = () => {
         let suma = page + 1;
         setPage(
@@ -40,46 +46,19 @@ const Home = () => {
         dispatch(getPaginationServer(page, limit));
     }
 
-    const handleLimit = (e) => {
-        let lmt = e.target.value;
-        if (lmt < 1) { lmt = 1 }
-        setLimit(lmt)
-    }
 
-    const handleSortForewards = () => {
-        console.log('sort');
-        let array = pagina;
-        array.sort(function (a, b) {
-            if (a.nombre > b.nombre) {
-                return 1;
-            }
-            if (a.nombre < b.nombre) {
-                return -1;
-            }
-            // a must be equal to b
-            return 0;
-        });
-
-        setPagina(array);
-
-    }
-
-    const handleSortBackwards = () => {
-
-    }
 
 
     return (
         <div>
-            <input type="button" value="<<<" onClick={handleBackwards} />
+            {/* <input type="button" value="<<<" onClick={handleBackwards} />
             <input type="button" value=">>>" onClick={handleForewards} />
             <input type="number" defaultValue={3} onClick={(e) => { handleLimit(e) }} />
-            <input type="button" value="A-Z" onClick={handleSortForewards} />
-            <input type="button" value="Z-A" onClick={handleSortBackwards} />
+             */}
 
             <div className="homeComponent">
 
-                {pagina ? pagina.map((pagina, index) => {
+                {/* {pagina ? pagina.map((pagina, index) => {
                     return (
                         <Link key={index} to={`/details/${pagina.id}`}>
                             <DogCard
@@ -91,7 +70,7 @@ const Home = () => {
                             />
                         </Link>
                     )
-                }) : null}
+                }) : null} */}
             </div>
             <DogSearch />
             </div>

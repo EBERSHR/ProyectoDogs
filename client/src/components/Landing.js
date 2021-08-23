@@ -13,7 +13,6 @@ const Landing = () => {
         )
     }
 
-    // console.log(menu);
     return (
         <div className="landing">
             {menu ? <AppRouters /> : null}

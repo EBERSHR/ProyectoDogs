@@ -2,10 +2,9 @@
     position: absolute;
     height: 100% !important;
     width: 100%; 
-    /* background-size: cover; */
-    /* background-image: url("../images/mundoSearch.jpg"); */
-    /* background-position: center; */
-    /* padding: 30em; */
+    background-size: cover; 
+    background-image: url('../images/dogs-rest-resort-area-summer-canopy-sunshine-sand-sea-beach-F100013625.jpg');
+    background-position: center;
   }
 
   .footer {
