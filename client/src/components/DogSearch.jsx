@@ -14,7 +14,7 @@ const DogSearch = () => {
                     <div key={element.id}>{element.nombre}</div>
                     </Link>
                 )
-            }
+            } else {return null}
         }): null)
     }
 
@@ -29,10 +29,9 @@ const DogSearch = () => {
 
     const [busqueda, setBusqueda] = useState();
 
-    const handleOnChangex = (e) => {
-        setMapeo(dogs);
-
+    const handleOnChange = (e) => {
         setBusqueda(e.target.value);
+        if (e.target.value === "") {setMapeo([])} else {setMapeo(dogs);}
     }
 
     const handleSortForewards = () => {
@@ -44,11 +43,9 @@ const DogSearch = () => {
             if (a.nombre < b.nombre) {
                 return -1;
             }
-            // a must be equal to b
             return 0;
         });
         setMapeo(array);
-        console.log(mapeo)
     }
 
     const handleSortBackwards = () => {
@@ -60,21 +57,18 @@ const DogSearch = () => {
             if (a.nombre < b.nombre) {
                 return -1;
             }
-            // a must be equal to b
             return 0;
         });
         setMapeo(array);
         console.log(mapeo)
-
     }
 
     return (
         <div>
         <div>
         <input type="button" value="A-Z" onClick={handleSortForewards} />
-        <input type="text" onChange={(e) => {handleOnChangex(e)}}/>
+        <input type="text" onChange={(e) => {handleOnChange(e)}}/>
             <input type="button" value="Z-A" onClick={handleSortBackwards} />
-
         </div>
         <div>
             {mapear()}

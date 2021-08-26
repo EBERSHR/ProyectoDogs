@@ -6,7 +6,8 @@ import { GET_ID_SERVER, GET_PAGINATION,
 const initialState = {
     pagination: [],
     details: [],
-    allDogs: []
+    allDogs: [],
+    x:[]
 }
 
 export const rootReducer = (state = initialState, action) => {
