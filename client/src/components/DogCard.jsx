@@ -4,12 +4,6 @@ import '../styles/card.css';
 
 const DogCard = (props) => {
 
-    // const history = useHistory();
-
-    // const handleOnClick = () => {
-    //     history.push(`/details/${props.id}`)
-    // }
-
     return (
         <div className="cardComponent">
             <div>

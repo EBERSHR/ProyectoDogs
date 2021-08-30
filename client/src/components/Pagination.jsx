@@ -8,45 +8,66 @@ import DogCard from './DogCard';
 
 const Pagination = () => {
     const [page, setPage] = useState(0);
-    const [limit, setLimit] = useState(3)
+    const [otroLimit, setOtroLimit] = useState(8);
+    const [limit, setLimit] = useState(8)
     const [pagina, setPagina] = useState();
 
     const paginado = useSelector(state => state.pagination);
+    
     const dispatch = useDispatch();
 
     useEffect(() => {
         setPagina(paginado);
     }, [paginado]);
+
+    const handleForewards = () => {
+        let suma = Number(otroLimit);
+        let limite = Number(otroLimit) + Number(limit); 
+
+        console.log(suma, limite);
+        if (pagina.length < limit) {
+            console.log('ya no hay', limit)
+            // dispatch(getPaginationServer(suma - limit, limite - limit));
+
+        } else {
+            setOtroLimit(limite)
+            setPage(suma)
+
+        }
+        console.log('Lenght', pagina.length);
+        dispatch(getPaginationServer(suma, limite));
+
+    }
     
     const handleBackwards = () => {
-        let resta = page - 1;
-        if (resta < 0) { resta = 0 }
-        setPage(
-            resta
-        )
-        dispatch(getPaginationServer(resta, limit));
+        let resta = page - Number(limit);
+        let limite = otroLimit -  Number(limit);
+        if (resta < 0) {
+            resta = 0;
+            limite = Number(limit);
+        }
+        setPage(resta);
+        setOtroLimit(limite);
+        console.log(resta, limite)
+        dispatch(getPaginationServer(resta, limite));
     }
 
     const handleLimit = (e) => {
         let lmt = e.target.value;
         if (lmt < 1) { lmt = 1 }
-        setLimit(lmt);
-        dispatch(getPaginationServer(page, lmt));
+        setLimit(Number(lmt));
+        let limite = page + Number(lmt);
+        dispatch(getPaginationServer(page, limite));
+        console.log(page, limite)
     }
 
-    const handleForewards = () => {
-        let suma = page + 1;
-        setPage(
-            suma
-        )
-        dispatch(getPaginationServer(suma, limit));
-    }
+
 
     return (
         <div>
             <input type="button" value="<<<" onClick={handleBackwards} />
             <input type="button" value=">>>" onClick={handleForewards} />
-            <input type="number" min="1" defaultValue={3} onClick={(e) => { handleLimit(e) }} />
+            <input type="number" min="1" max="12" defaultValue={8} onClick={(e) => { handleLimit(e) }} />
 
 
             <div className="homeComponent">
@@ -59,7 +80,7 @@ const Pagination = () => {
                                 id={pagina.id}
                                 image={pagina.image}
                                 name={pagina.nombre}
-                                temperament="Ocioso.."
+                                temperament={pagina.temperament}
                             />
                         </Link>
                     )

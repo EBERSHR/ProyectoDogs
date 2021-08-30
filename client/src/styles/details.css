@@ -1,6 +1,12 @@
-.detailsImage {
-    height: 300px;
+.detailComponent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
 
+.detailsImage {
+    height: 600px;
+    width: 70%;
     object-fit: contain;
     overflow: hidden;
 }

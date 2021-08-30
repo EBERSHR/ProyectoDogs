@@ -1,0 +1,33 @@
+.listTile {
+    display: flex;
+    flex-direction: row;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+.searchListComponent {
+    max-height: 500px;
+}
+
+.listComponentImage {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+}
+
+.listImage {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.liseTitles {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

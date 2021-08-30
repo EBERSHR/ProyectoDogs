@@ -8,9 +8,8 @@ import '../styles/details.css'
 
 
 const Details = () => {
-    // let id = 45;
+
     let { id } = useParams();
-    console.log(typeof id);
 
     const details = useSelector(state => state.details);
     const history = useHistory();
@@ -20,25 +19,27 @@ const Details = () => {
         dispatch(getId(id))
     }, [id, dispatch]);
 
-    console.log('DETAILS:::', details);
-
     const goBack = () => {
         history.goBack();
     }
 
     return details ? (
-        <div>
+        <div className="detailComponent">
+            <div className="detailsImage">
+                <img src={details.image} alt="nombre del perro" />
+            </div>
+            <div className="detailDetails">
             <input type="button" onClick={goBack}/>
             <div>
                 {details.nombre}
             </div>
-            <div className="detailsImage">
-                <img src={details.image} alt="nombre del perro" />
-            </div>
-
             <div>
                 {details.id}
             </div>
+            </div>
+
+            {/* 
+ */}
         </div>
     ) : (<div></div>);
 }

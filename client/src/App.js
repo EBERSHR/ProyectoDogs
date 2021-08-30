@@ -6,7 +6,7 @@ import { getPaginationServer } from './redux/actions';
 
 function App() {
   const page = 0;
-  const limit = 3;
+  const limit = 8;
 
   const dispatch = useDispatch();
 

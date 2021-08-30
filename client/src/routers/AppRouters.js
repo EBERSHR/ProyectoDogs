@@ -1,19 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-// import NavBar from '../components/NavBar';
+import NavBar from '../components/NavBar';
 import Home from '../components/Home';
 import Details from '../components/Details';
-// import Detalle from '../components/Detalle';
-// import Actividad from '../components/Actividad';
+import Razas from '../components/Razas';
 
 
 const AppRouters = () => {
     return (
         <Router>
-            {/* <NavBar /> */}
+            <NavBar />
             <Switch>
-                {/* <Route exact path="/detalle" component={Detalle} />
-                <Route exact path="/actividad" component={Actividad} /> */}
+                <Route exact path="/razas" component={Razas} />
                 <Route exact path="/details/:id">
                     <Details />
                 </Route>    

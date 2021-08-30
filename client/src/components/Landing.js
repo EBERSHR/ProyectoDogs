@@ -21,7 +21,6 @@ const Landing = () => {
             <div className="footer">
             <input type="button" value="Perros" className="landingInput" onClick={handleClick} /> 
             </div>
-            
              : null}
         </div>
     );

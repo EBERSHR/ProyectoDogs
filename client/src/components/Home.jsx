@@ -7,9 +7,13 @@ import '../styles/home.css';
 const Home = () => {
 
     return (
-        <div>
-            <Pagination />
-            <DogSearch />
+        <div className="homeComponent">
+            <div className="homePaginationSpace">
+                <Pagination />
+            </div>
+            <div className="homeDogSearchSpace">
+                <DogSearch />
+            </div>
         </div>
     );
 }

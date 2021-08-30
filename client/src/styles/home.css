@@ -1,4 +1,16 @@
 .homeComponent {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.homePaginationSpace {
+    width: 70%;
+}
+
+.homeDogSearchSpace {
+    background-color: aqua;
+    max-height: 500px;
+    width: 30%;
+    overflow: scroll
 }
