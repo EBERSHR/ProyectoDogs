@@ -1,7 +1,6 @@
 const { Router } = require('express');
 const axios = require('axios');
 const { Dog, Temperament } = require('../db');
-const { elementAttributeModified } = require('jsdom/lib/jsdom/living/named-properties-window');
 
 let arrayDeDatos = [];
 
